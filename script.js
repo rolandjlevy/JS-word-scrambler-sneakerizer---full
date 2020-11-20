@@ -4,7 +4,7 @@ const special = '#*~%&@£$,.":;!?()-+=____';
 const keyCodeA = 97;
 const abcArr = String.fromCharCode(...[...Array(26)].map((_) => i++, i=keyCodeA));
 const abc = [...abcArr, abcArr.toUpperCase(), special].join('');
-const SPEED = 75;
+const SPEED = 50;
 
 const convertedMax = parseInt('ffffff', 16);
 const randomNum = (n) => Math.floor(Math.random() * Math.floor(n));
@@ -29,8 +29,7 @@ const generate = (message) => {
 }
 
 const getRandomChar = () => {
-  const abcLength = abc.length - 1;
-  const randomNum = Math.floor(Math.random() * abcLength);
+  const randomNum = Math.floor(Math.random() * (abc.length - 1));
   return abc[randomNum];
 }
 
